@@ -21,9 +21,9 @@ With the connection string in the attacked file in the email it is possible to s
 
 --Structure-- <br/>
 Overall i seperated the project in two sub projects but ideally it should have been even more separated in more subprojects. <br/>
-Front end, model libraries, db handling and other areas could / should be different projects (with their own pipeline and git). <br/>
+Front end, model libraries, db handling and other areas could / should be different projects (with their own pipeline and git). <br/> <br/> 
 
---Things lacking in need of improve-- <br/> <br/>
+--Things lacking in need of improve-- <br/> 
 Logging in many areas should have been better. <br/>
 Caching is not im place. <br/>
 Resilience policies are not in place. <br/>

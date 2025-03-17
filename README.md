@@ -3,7 +3,7 @@ Some decision making, thoughts and comments  <br/> <br/>
 Db - Mssql is used, on cloud on my own Azure <br/>
 Backend - .net core 9 web api <br/>
 Front end - Blazor pages -- i thought to try this for the first time, plus i wanted an 'all in one' solution to avoid prerequisites <br/>
-There is a db connection string and fixer.io api access key that are needed to changed in the app settings for the implementation to work. <br/> <br/>
+There is a db connection string and fixer.io api access key that are needed to change in the app settings for the implementation to work. The values will be included in the attackemtn in the response email of the task. <br/> <br/>
 
 The application is working in some parts and not in others, going for Blazor pages was not a good desicion because of my lack of experience with it and issues with events probably that i couldnt figure out. <br/> <br/>
 
@@ -16,7 +16,8 @@ An approach to seperate the 'main' information needed (rates) and related infora
 That may make the overal result a bit more complex (losing polymorphism) but that structure was chosen in mind with scalability and frequent db calls. <br/>
 There is a unit of work implemented mostly to have total control over the daily update of the rates.  <br/>
 This unit of work ideally should have a different structure as its not ideal for simple operations. <br/>
-There is data in the cloud db. <br/> <br/>
+There is data in the cloud db. <br/>
+With the connection string in the attacked file in the email it is possible to see in data studio the structure and data.  <br/> <br/>
 
 --Structure-- <br/>
 Overall i seperated the project in two sub projects but ideally it should have been even more separated in more subprojects. <br/>

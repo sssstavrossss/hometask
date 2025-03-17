@@ -1,0 +1,12 @@
+/Users/a30694/RiderProjects/Hometask/HometaskLib/bin/Debug/net9.0/HometaskLib.deps.json
+/Users/a30694/RiderProjects/Hometask/HometaskLib/bin/Debug/net9.0/HometaskLib.dll
+/Users/a30694/RiderProjects/Hometask/HometaskLib/bin/Debug/net9.0/HometaskLib.pdb
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.csproj.AssemblyReference.cache
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.AssemblyInfoInputs.cache
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.AssemblyInfo.cs
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.csproj.CoreCompileInputs.cache
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.dll
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/refint/HometaskLib.dll
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/HometaskLib.pdb
+/Users/a30694/RiderProjects/Hometask/HometaskLib/obj/Debug/net9.0/ref/HometaskLib.dll

@@ -1,0 +1,128 @@
+@page "/currencyconverter"
+@using HometaskLib.Models.Dto
+@inject IHttpClientFactory HttpClientFactory
+
+<h3>Currency Converter</h3>
+
+<div>
+    <label>From Currency: </label>
+    <span>EUR</span>
+</div>
+<div>
+    <label>To Currency: </label>
+    <select @bind="toCurrency">
+        <option value="">-- Select Currency --</option>
+        @foreach (var currency in availableCurrencies)
+        {
+            <option value="@currency">@currency</option>
+        }
+    </select>
+</div>
+<div>
+    <label>Amount: </label>
+    <input type="number" @bind="amount" />
+</div>
+<div>
+    <label>Date (optional, format YYYY-MM-DD): </label>
+    <InputDate @bind-Value="dateInput" />
+</div>
+<!-- Specify type="button" to avoid any default form behavior -->
+<button type="button" @onclick="ConvertCurrency">Convert</button>
+
+@if (isLoading)
+{
+    <p>Converting...</p>
+}
+@if (conversionResponse != null)
+{
+    <p>Converted Amount: @conversionResponse.ConvertedAmount</p>
+    <p>Original Amount: @conversionResponse.OriginalAmount @conversionResponse.From</p>
+    <p>Converted From @conversionResponse.From to @conversionResponse.To</p>
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p style="color:red">@errorMessage</p>
+}
+
+@code {
+    private HttpClient http;
+    private string fromCurrency = "EUR";
+    private string toCurrency;
+    private decimal amount;
+    private DateTime? dateInput;
+    private CurrencyConversionResponse conversionResponse;
+    private string errorMessage;
+    private bool isLoading = false;
+    
+    // List of available currency codes from the backend.
+    private List<string> availableCurrencies = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            http = HttpClientFactory.CreateClient("HttpClient");
+            Console.WriteLine("HttpClient created with BaseAddress: " + http.BaseAddress);
+            availableCurrencies = await http.GetFromJsonAsync<List<string>>("Currency/available");
+            Console.WriteLine("Available currencies loaded: " + string.Join(", ", availableCurrencies));
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Error loading currencies: " + ex.Message;
+            Console.WriteLine(errorMessage);
+        }
+    }
+
+    private async Task ConvertCurrency()
+    {
+        Console.WriteLine("ConvertCurrency clicked");
+        errorMessage = null;
+        conversionResponse = null;
+
+        // Check if target currency is selected.
+        if (string.IsNullOrEmpty(toCurrency))
+        {
+            errorMessage = "Please select a target currency.";
+            Console.WriteLine(errorMessage);
+            return;
+        }
+        
+        isLoading = true;
+        StateHasChanged();
+
+        var request = new CurrencyConversionRequest
+        {
+            From = fromCurrency,
+            To = toCurrency,
+            Amount = amount,
+            Date = dateInput
+        };
+
+        try
+        {
+            Console.WriteLine("Posting conversion request...");
+            var response = await http.PostAsJsonAsync("Currency/convert", request);
+            Console.WriteLine("Response status: " + response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                conversionResponse = await response.Content.ReadFromJsonAsync<CurrencyConversionResponse>();
+                Console.WriteLine("Conversion response received.");
+            }
+            else
+            {
+                errorMessage = "Conversion failed: " + response.ReasonPhrase;
+                Console.WriteLine(errorMessage);
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Error: " + ex.Message;
+            Console.WriteLine(errorMessage);
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+}

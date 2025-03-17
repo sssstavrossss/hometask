@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hometask", "Hometask.csproj", "{48636C39-6BE9-4DE4-A92D-5E7F146DDF0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HometaskLib", "HometaskLib\HometaskLib.csproj", "{82EA9A23-85BD-45B0-AB52-4849972028EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48636C39-6BE9-4DE4-A92D-5E7F146DDF0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48636C39-6BE9-4DE4-A92D-5E7F146DDF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48636C39-6BE9-4DE4-A92D-5E7F146DDF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48636C39-6BE9-4DE4-A92D-5E7F146DDF0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82EA9A23-85BD-45B0-AB52-4849972028EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82EA9A23-85BD-45B0-AB52-4849972028EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82EA9A23-85BD-45B0-AB52-4849972028EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82EA9A23-85BD-45B0-AB52-4849972028EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

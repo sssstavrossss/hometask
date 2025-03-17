@@ -3,7 +3,8 @@ Some decision making, thoughts and comments  <br/> <br/>
 Db - Mssql is used, on cloud on my own Azure <br/>
 Backend - .net core 9 web api <br/>
 Front end - Blazor pages -- i thought to try this for the first time, plus i wanted an 'all in one' solution to avoid prerequisites <br/>
-There is a db connection string and fixer.io api access key that are needed to change in the app settings for the implementation to work. The values will be included in the attackemtn in the response email of the task. <br/> <br/>
+There is a db connection string and fixer.io api access key that are needed to change in the app settings for the implementation to work. The values will be included in the attackemtn in the response email of the task. <br/>
+The original idea was to also have the code published on cloud, just like the db, but i had an issue with the publish the last minute and I did not spend time to fix that.  <br/> <br/>
 
 The application is working in some parts and not in others, going for Blazor pages was not a good desicion because of my lack of experience with it and issues with events probably that i couldnt figure out. <br/> <br/>
 
